@@ -1,0 +1,41 @@
+.chart {
+			shape-rendering: crispEdges;
+		}
+
+		.mini text {
+			font: 22px sans-serif;	
+		}
+
+		.main text {
+			font: 22px sans-serif;	
+		}
+
+		.miniItem0 {
+			fill: #00CCCC;
+			stroke-width: 2;
+			stroke: #00FFFF;
+		}
+
+		.miniItem1 {
+			fill: darkolivegreen;
+			fill-opacity: .7;
+			stroke-width: 6;	
+		}
+
+		.miniItem2 {
+			fill: slategray;
+			fill-opacity: .7;
+			stroke-width: 6;	
+		}
+
+		.brush .extent {
+			stroke: gray;
+			fill: dodgerblue;
+			fill-opacity: .365;
+		}
+
+		
+		.titre-frise {
+			fill: #FF000;
+			stroke: #00FF00;
+		}
