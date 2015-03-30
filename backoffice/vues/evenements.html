@@ -1,0 +1,26 @@
+<!doctype html>
+<h2>Événements</h2>
+<p>
+    <button class="btn btn-default" ng-click="ouvrirModaleEditerRapport(support)">Ajouter événement</button>
+</p>
+<ul class="list-unstyled">
+    <li ng-repeat="evenement in listeEvenements | filter:friseSelectionee" class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Evenement {{evenement.nom}}
+            </h3>
+        </div>
+        <div class="panel-body">
+            <p>
+                {{evenement.dateEventuelle}} {{evenement.anneeOccurence}}  
+            </p>
+            <p>
+                {{evenement.descriptionCourte}}
+            </p>
+            <p>
+                <button class="btn btn-danger" ng-click="effacerEvenement(evenement)">Effacer</button>
+                <button class="btn btn-default" ng-click="ouvrirModaleEditerRapport(support)">Editer</button>
+            </p>
+        </div>
+    </li>
+</ul>

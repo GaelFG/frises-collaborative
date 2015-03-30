@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>Frises interactives : Administration</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/lib/angular.min.js"></script>
+        <script src="./js/lib/ui-bootstrap-tpls-0.12.1.js"></script>
+        <script src="./js/application.js"></script>
+    </head>
+
+    <body>
+        <div ng-app="adminFrisesInteractives" class="container">
+            <div ng-controller="ControleurAdministration">
+                <div ng-include src="'./vues/bandeauTitre.html'"></div>
+                <div class="row">
+                    
+                    <div ng-include src="'./vues/frises.html'" class="col-md-4 col-lg-4"></div>
+                    
+                    <div ng-include src="'./vues/periodes.html'" class="col-md-4 col-lg-4"></div>
+                    
+                    <div ng-include src="'./vues/evenements.html'" class="col-md-4 col-lg-4"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

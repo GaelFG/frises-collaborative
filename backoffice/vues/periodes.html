@@ -1,0 +1,21 @@
+<!doctype html>
+<h2>Périodes</h2>
+<p><button class="btn btn-default" ng-click="ouvrirModaleEditerRapport(support)">Ajouter période</button></p>
+<ul class="list-unstyled">
+    <li ng-repeat="periode in listePeriodes | filter:friseSelectionee" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Période {{periode.nom}}
+            </h3>
+        </div>
+        <div class="panel-body">
+            <p>
+                De {{periode.anneeDepart}} à {{periode.anneeFin}} 
+            </p>
+            <p>
+                <button class="btn btn-danger" ng-click="effacerPeriode(periode)">Effacer</button>
+                <button class="btn btn-default" ng-click="ouvrirModaleEditerRapport(support)">Editer</button>
+            </p>
+        </div>
+    </li>
+</ul>
