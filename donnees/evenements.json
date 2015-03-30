@@ -1,5 +1,8 @@
 [
-{"friseId": 0, "nom": "mettre ici le nom", "anneeOccurence": 2015, "dateEventuelle": "15 Janvier", "descriptionCourte": "blabla"},
-{"friseId": 0, "nom": "mettre ici le nom", "anneeOccurence": 2015, "dateEventuelle": "15 Janvier", "descriptionCourte": "blabla"},
-{"friseId": 0, "nom": "mettre ici le nom", "anneeOccurence": 2015, "dateEventuelle": "15 Janvier", "descriptionCourte": "blabla"}
+{"friseId": 0, "nom": "Découverte des Amériques", "anneeOccurence": 1492, "dateEventuelle": "12 Octobre", "descriptionCourte": "Découverte des Amériques par Christophe Colomb"},
+{"friseId": 0, "nom": "Révolution française", "anneeOccurence": 1789, "dateEventuelle": "14 Juillet", "descriptionCourte": "Prise de la Bastille"},
+{"friseId": 0, "nom": "Déclaration des droits de l'homme et du citoyen", "anneeOccurence": 1789, "dateEventuelle": "26 Août", "descriptionCourte": ""},
+{"friseId": 0, "nom": "Chute de la monarchie", "anneeOccurence": 1792, "dateEventuelle": "10 Août", "descriptionCourte": "Prise des Tuileries et suspension de Louis XVI"},
+{"friseId": 0, "nom": "Abolition de la royauté", "anneeOccurence": 1792, "dateEventuelle": "21 Septembre", "descriptionCourte": "La Convention nationale fonde la Première République"},
+{"friseId": 0, "nom": "Les Trois Glorieuses", "anneeOccurence": 1830, "dateEventuelle": "27.28.29 Juillet", "descriptionCourte": "Insurrection à Paris, rassemblant la bourgeoisie et le peuple""}
 ]

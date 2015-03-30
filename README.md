@@ -1,2 +1,2 @@
-# frises-collaborative
-Projet création de frise collaborative
+# frises-collaboratives
+Projet création de frises collaboratives
