@@ -145,9 +145,9 @@ var annee_fin = 2000;
 var frisesCreator;
 
 // Les appels a d3.json sont asynchrones, on est donc obligé de passer par cette série de callbacks pour attendre le chargement.
-d3.json("./donnees/frises.json", function(json) {
+d3.json("../donnees/frises.json", function(json) {
 	frises = json;
-	d3.json("./donnees/periodes.json", function(json) {
+	d3.json("../donnees/periodes.json", function(json) {
 		periodes = json;
 		frisesCreator = new FrisesCreator(frises, periodes, null, annee_debut, annee_fin);
 		frisesCreator.construireFrises();
