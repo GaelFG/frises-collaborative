@@ -1,70 +1,97 @@
+body {
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    background-color: aqua;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+}
+
+.noms-frises {
+    background-color: chartreuse;
+    position: fixed;
+    height: 100%;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    line-height: 85px;
+}
+
+.conteneur-frises {
+    margin-top: 150px;
+}
+
 .chart {
-			shape-rendering: crispEdges;
-		}
+    shape-rendering: crispEdges;
+}
 
-		.mini text {
-			font: 18px sans-serif;	
-		}
+.mini text {
+    font: 18px sans-serif;	
+}
 
-		.main text {
-			font: 24px sans-serif;	
-		}
+.main text {
+    font: 24px sans-serif;	
+}
 
-		.miniItem0 {
-			fill: #00CCCC;
-            fill-opacity: .5;
-			stroke-width: 6;
-			stroke: #00FFFF;
-		}
+.miniItem0 {
+    fill: #00CCCC;
+    fill-opacity: .5;
+    stroke-width: 6;
+    stroke: #00FFFF;
+}
 
-		.miniItem1 {
-			fill: darkolivegreen;
-			fill-opacity: .5;
-			stroke-width: 6;
-            stroke: #00FFFF;
-		}
+.miniItem1 {
+    fill: darkolivegreen;
+    fill-opacity: .5;
+    stroke-width: 6;
+    stroke: #00FFFF;
+}
 
-		.miniItem2 {
-			fill: slategray;
-			fill-opacity: .5;
-			stroke-width: 6;
-            stroke: #00FFFF;
-		}
+.miniItem2 {
+    fill: slategray;
+    fill-opacity: .5;
+    stroke-width: 6;
+    stroke: #00FFFF;
+}
 
-		.miniItem3 {
-			fill: #00CCCC;
-            fill-opacity: .5;
-			stroke-width: 2;
-			stroke: #00FFFF;
-            
-		}
+.miniItem3 {
+    fill: #00CCCC;
+    fill-opacity: .5;
+    stroke-width: 2;
+    stroke: #00FFFF;
 
-		.miniItem4 {
-			fill: darkolivegreen;
-			fill-opacity: .7;
-			stroke-width: 6;
-            stroke: #00FFFF;
-		}
+}
 
-		.miniItem5 {
-			fill: slategray;
-			fill-opacity: .5;
-			stroke-width: 6;
-            stroke: #00FFFF;
-		}
+.miniItem4 {
+    fill: darkolivegreen;
+    fill-opacity: .7;
+    stroke-width: 6;
+    stroke: #00FFFF;
+}
 
-		.miniItem6 {
-			fill: slategray;
-			fill-opacity: .5;
-			stroke-width: 6;
-            stroke: #00FFFF;
-		}
+.miniItem5 {
+    fill: slategray;
+    fill-opacity: .5;
+    stroke-width: 6;
+    stroke: #00FFFF;
+}
 
-		
-		.titre-frise {
-			fill: #FF000;
-		}
+.miniItem6 {
+    fill: slategray;
+    fill-opacity: .5;
+    stroke-width: 6;
+    stroke: #00FFFF;
+}
+
+
+.titre-frise {
+    fill: #FF000;
+}
 
 .ligne-separation-frises {
-            stroke: #AAAAAA;
-        }
+    stroke: #AAAAAA;
+}

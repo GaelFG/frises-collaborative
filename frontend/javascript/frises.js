@@ -1,7 +1,7 @@
 (function () {
     "use strict";
-    var frises, periodes, annee_debut, annee_fin, FrisesCreator, frisesCreator;
-    
+    var frises, periodes, evenements, annee_debut, annee_fin, FrisesCreator, frisesCreator;
+
     FrisesCreator = function (frises, periodes, evenements, annee_debut, annee_fin) {
         // Données d'entrée 
         this.frises = frises;
@@ -11,12 +11,12 @@
         this.annee_fin = annee_fin;
 
         // Paramètres graphiques
-        this.marge_haut_svg = 50;
+        this.marge_haut_svg = 150;
         this.marge_droite_svg = 15;
         this.marge_bas_svg = 15;
         this.marge_gauche_svg = 450;
         this.hauteur_frise = 100;
-        this.largeur_svg = 24000 - this.marge_droite_svg - this.marge_gauche_svg;
+        this.largeur_svg = 36000 - this.marge_droite_svg - this.marge_gauche_svg;
         this.hauteur_svg = 800 - this.marge_haut_svg - this.marge_bas_svg;
     };
 
@@ -69,7 +69,7 @@
             .attr("x2", this.largeur_svg)
             .attr("y1", function (d) {return self.y1(d.id) + 10; })
             .attr("y2", function (d) {return self.y1(d.id) + 10; })
-            .attr("class", "ligne-separation-frises")
+            .attr("class", "ligne-separation-frises");
 
         this.main.append("g").selectAll(".titre-frise")
             .data(this.frises)
@@ -84,18 +84,23 @@
         this.itemRects = this.main.append("g")
             .attr("clip-path", "url(#clip)");
 
+        this.vignettesEvenements = this.main.append("g")
+            .attr("class", "vignette-evenement");
+        
         this.display();
     };
 
     FrisesCreator.prototype.display = function () {
         var minExtent, maxExtent;
-        
+
         minExtent = 1400;
         maxExtent = 2000;
 
         this.x1.domain([minExtent, maxExtent]);
         this.majRectanglesPeriodes();
         this.majEtiquettesPeriodes(minExtent, maxExtent);
+        this.majEtiquettesEvenements(minExtent, maxExtent);
+        
     };
 
     FrisesCreator.prototype.majRectanglesPeriodes = function () {
@@ -124,12 +129,27 @@
         labels = this.itemRects.selectAll("text")
             .data(periodes, function (d) { return d.nom; })
             .attr("x", function (d) {return this.x1(Math.max(d.anneeDepart, minExtent)
-                                                   + ((Math.min(d.anneeFin, maxExtent) - Math.max(d.anneeDepart, minExtent))  / 2)
-                                                  ); });
+                                                    + ((Math.min(d.anneeFin, maxExtent) - Math.max(d.anneeDepart, minExtent))  / 2)
+                                                   ); });
         labels.enter().append("text")
             .text(function (d) {return d.nom; })
             .attr("x", function (d) {return self.x1(Math.max(d.anneeDepart, minExtent)); })
             .attr("y", function (d) {return self.y1(d.friseId + 0.5); })
+            .attr("text-anchor", "start");
+        labels.exit().remove();
+    };
+
+    FrisesCreator.prototype.majEtiquettesEvenements = function (minExtent, maxExtent) {
+        var self, labels;
+        self = this;
+        labels = this.vignettesEvenements.selectAll("text")
+            .data(evenements, function (d) { return d.nom; })
+            .attr("x", function (d) {return this.x1(d.anneeOccurence
+                                                   ); });
+        labels.enter().append("text")
+            .text(function (d) {return d.nom; })
+            .attr("x", function (d) {return self.x1(d.anneeOccurence); })
+            .attr("y", function (d) {return self.y1(d.friseId + 0.25); })
             .attr("text-anchor", "start");
         labels.exit().remove();
     };
@@ -144,8 +164,11 @@
         frises = json;
         d3.json("../donnees/periodes.json", function (json) {
             periodes = json;
-            frisesCreator = new FrisesCreator(frises, periodes, null, annee_debut, annee_fin);
-            frisesCreator.construireFrises();
+            d3.json("../donnees/evenements.json", function (json) {
+                evenements = json;
+                frisesCreator = new FrisesCreator(frises, periodes, evenements, annee_debut, annee_fin);
+                frisesCreator.construireFrises();
+            });
         });
     });
 
