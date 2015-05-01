@@ -14,9 +14,9 @@
         this.marge_haut_svg = 50;
         this.marge_droite_svg = 15;
         this.marge_bas_svg = 15;
-        this.marge_gauche_svg = 300;
+        this.marge_gauche_svg = 450;
         this.hauteur_frise = 100;
-        this.largeur_svg = 4000 - this.marge_droite_svg - this.marge_gauche_svg;
+        this.largeur_svg = 24000 - this.marge_droite_svg - this.marge_gauche_svg;
         this.hauteur_svg = 800 - this.marge_haut_svg - this.marge_bas_svg;
     };
 
@@ -63,18 +63,18 @@
 
         //main lanes and texts
         this.main.append("g").selectAll(".laneLines")
-            .data(this.periodes)
+            .data(this.frises)
             .enter().append("line")
             .attr("x1", this.marge_droite_svg)
-            .attr("y1", function (d) {return self.y1(d.friseId); })
             .attr("x2", this.largeur_svg)
-            .attr("y2", function (d) {return self.y1(d.friseId); })
-            .attr("stroke", "lightgray");
+            .attr("y1", function (d) {return self.y1(d.id) + 10; })
+            .attr("y2", function (d) {return self.y1(d.id) + 10; })
+            .attr("class", "ligne-separation-frises")
 
         this.main.append("g").selectAll(".titre-frise")
             .data(this.frises)
             .enter().append("text")
-            .text(function (d) {return d; })
+            .text(function (d) {return d.libelle; })
             .attr("x", -this.marge_droite_svg)
             .attr("y", function (d, i) {return self.y2(i + 0.5); })
             .attr("dy", ".5ex")
@@ -90,7 +90,7 @@
     FrisesCreator.prototype.display = function () {
         var minExtent, maxExtent;
         
-        minExtent = 0;
+        minExtent = 1400;
         maxExtent = 2000;
 
         this.x1.domain([minExtent, maxExtent]);
@@ -126,19 +126,17 @@
             .attr("x", function (d) {return this.x1(Math.max(d.anneeDepart, minExtent)
                                                    + ((Math.min(d.anneeFin, maxExtent) - Math.max(d.anneeDepart, minExtent))  / 2)
                                                   ); });
-
         labels.enter().append("text")
             .text(function (d) {return d.nom; })
             .attr("x", function (d) {return self.x1(Math.max(d.anneeDepart, minExtent)); })
             .attr("y", function (d) {return self.y1(d.friseId + 0.5); })
             .attr("text-anchor", "start");
-
         labels.exit().remove();
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Debut code au chargement de la page
-    annee_debut = 0;
+    annee_debut = 1350;
     annee_fin = 2000;
 
     // Les appels a d3.json sont asynchrones, on est donc obligé de passer par cette série de callbacks pour attendre le chargement.

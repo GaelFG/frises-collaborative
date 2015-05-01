@@ -3,7 +3,7 @@
 		}
 
 		.mini text {
-			font: 22px sans-serif;	
+			font: 18px sans-serif;	
 		}
 
 		.main text {
@@ -12,30 +12,59 @@
 
 		.miniItem0 {
 			fill: #00CCCC;
-			stroke-width: 2;
+            fill-opacity: .5;
+			stroke-width: 6;
 			stroke: #00FFFF;
 		}
 
 		.miniItem1 {
 			fill: darkolivegreen;
-			fill-opacity: .7;
-			stroke-width: 6;	
+			fill-opacity: .5;
+			stroke-width: 6;
+            stroke: #00FFFF;
 		}
 
 		.miniItem2 {
 			fill: slategray;
-			fill-opacity: .7;
-			stroke-width: 6;	
+			fill-opacity: .5;
+			stroke-width: 6;
+            stroke: #00FFFF;
 		}
 
-		.brush .extent {
-			stroke: gray;
-			fill: dodgerblue;
-			fill-opacity: .365;
+		.miniItem3 {
+			fill: #00CCCC;
+            fill-opacity: .5;
+			stroke-width: 2;
+			stroke: #00FFFF;
+            
+		}
+
+		.miniItem4 {
+			fill: darkolivegreen;
+			fill-opacity: .7;
+			stroke-width: 6;
+            stroke: #00FFFF;
+		}
+
+		.miniItem5 {
+			fill: slategray;
+			fill-opacity: .5;
+			stroke-width: 6;
+            stroke: #00FFFF;
+		}
+
+		.miniItem6 {
+			fill: slategray;
+			fill-opacity: .5;
+			stroke-width: 6;
+            stroke: #00FFFF;
 		}
 
 		
 		.titre-frise {
 			fill: #FF000;
-			stroke: #00FF00;
 		}
+
+.ligne-separation-frises {
+            stroke: #AAAAAA;
+        }
