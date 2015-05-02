@@ -1,3 +1,4 @@
+/*global d3 */
 (function () {
     "use strict";
     var frises, periodes, evenements, annee_debut, annee_fin, FrisesCreator, frisesCreator;
@@ -11,10 +12,10 @@
         this.annee_fin = annee_fin;
 
         // Paramètres graphiques
-        this.marge_haut_svg = 150;
+        this.marge_haut_svg = 80;
         this.marge_droite_svg = 15;
         this.marge_bas_svg = 15;
-        this.marge_gauche_svg = 450;
+        this.marge_gauche_svg = 350;
         this.hauteur_frise = 100;
         this.largeur_svg = 36000 - this.marge_droite_svg - this.marge_gauche_svg;
         this.hauteur_svg = 800 - this.marge_haut_svg - this.marge_bas_svg;
@@ -30,7 +31,6 @@
         this.y1 = d3.scale.linear()
             .domain([0, nombre_de_frises])
             .range([0, this.hauteur_svg]);
-
         this.y2 = d3.scale.linear()
             .domain([0, nombre_de_frises])
             .range([0, this.hauteur_frise * nombre_de_frises]);
@@ -71,15 +71,15 @@
             .attr("y2", function (d) {return self.y1(d.id) + 10; })
             .attr("class", "ligne-separation-frises");
 
-        this.main.append("g").selectAll(".titre-frise")
+        this.blocNomsFrises = d3.select("#liste-noms-frises");
+        
+        this.blocNomsFrises.selectAll("li")
             .data(this.frises)
-            .enter().append("text")
-            .text(function (d) {return d.libelle; })
-            .attr("x", -this.marge_droite_svg)
-            .attr("y", function (d, i) {return self.y2(i + 0.5); })
-            .attr("dy", ".5ex")
-            .attr("text-anchor", "end")
-            .attr("class", "titre-frise");
+            .enter()
+            .append("li")
+            .attr("class", "nom-frise")
+            .text(function (d) {return d.libelle; });
+
 
         this.itemRects = this.main.append("g")
             .attr("clip-path", "url(#clip)");
@@ -95,7 +95,6 @@
 
         minExtent = 1400;
         maxExtent = 2000;
-
         this.x1.domain([minExtent, maxExtent]);
         this.majRectanglesPeriodes();
         this.majEtiquettesPeriodes(minExtent, maxExtent);
@@ -106,18 +105,17 @@
     FrisesCreator.prototype.majRectanglesPeriodes = function () {
         var self, rects;
         self = this;
-
         rects = this.itemRects.selectAll("rect")
-            .data(periodes, function (d) { return d.nom; })
-            .attr("x", function (d) {return self.x1(d.anneeDepart); })
-            .attr("width", function (d) {return self.x1(d.anneeFin) - self.x1(d.anneeDepart); });
+            .data(periodes, function (d) { return d.nom; });
+            
 
+        
         rects.enter().append("rect")
             .attr("class", function (d) {return "miniItem" + d.friseId; })
             .attr("x", function (d) {return self.x1(d.anneeDepart); })
             .attr("y", function (d) {return self.y1(d.friseId) + 10; })
             .attr("width", function (d) {return self.x1(d.anneeFin) - self.x1(d.anneeDepart); })
-            .attr("height", function (d) {return 0.8 * self.y1(1); });
+            .attr("height", function (d) {return self.y1(1); });
 
         rects.exit().remove();
     };
@@ -125,17 +123,15 @@
     FrisesCreator.prototype.majEtiquettesPeriodes = function (minExtent, maxExtent) {
         var self, labels;
         self = this;
-
         labels = this.itemRects.selectAll("text")
-            .data(periodes, function (d) { return d.nom; })
-            .attr("x", function (d) {return this.x1(Math.max(d.anneeDepart, minExtent)
-                                                    + ((Math.min(d.anneeFin, maxExtent) - Math.max(d.anneeDepart, minExtent))  / 2)
-                                                   ); });
+            .data(periodes, function (d) { return d.nom; });
+        
         labels.enter().append("text")
             .text(function (d) {return d.nom; })
-            .attr("x", function (d) {return self.x1(Math.max(d.anneeDepart, minExtent)); })
+            .attr("x", function (d) {return (self.x1(d.anneeDepart)) + ((self.x1(d.anneeFin) - self.x1(d.anneeDepart)) / 2); })
             .attr("y", function (d) {return self.y1(d.friseId + 0.5); })
             .attr("text-anchor", "start");
+        
         labels.exit().remove();
     };
 

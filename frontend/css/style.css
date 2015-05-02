@@ -2,45 +2,46 @@ body {
     margin: 0;
 }
 
-.header {
+.bandeau-titre {
     position: fixed;
-    background-color: aqua;
+    background-color: #484D70;
+    color: #FFFFFF;
     width: 100%;
     margin: 0px;
     text-align: center;
+    border-bottom: solid 1px #FF0000;
 }
 
-.noms-frises {
-    background-color: chartreuse;
-    position: fixed;
-    height: 100%;
-    padding-top: 100px;
+.nom-frise {
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 38px;
+    padding-top: 38px;
+}
+
+#conteneur-noms-frises {
+    background-color: #484D70;
+    position: fixed;
+    top: 80px;
+    height: 100%;
+    list-style: none;
+}
+
+#liste-noms-frises {
     font-size: 22px;
-    line-height: 85px;
+    color: #FFFFFF;
+    padding: 0px;
+    margin: 0px;
 }
 
 .conteneur-frises {
-    margin-top: 150px;
-}
-
-.chart {
-    shape-rendering: crispEdges;
-}
-
-.mini text {
-    font: 18px sans-serif;	
-}
-
-.main text {
-    font: 24px sans-serif;	
+    margin-top: 100px;
 }
 
 .miniItem0 {
-    fill: #00CCCC;
+    fill: #CCCCCC;
     fill-opacity: .5;
-    stroke-width: 6;
+    stroke-width: 2;
     stroke: #00FFFF;
 }
 
@@ -85,11 +86,6 @@ body {
     fill-opacity: .5;
     stroke-width: 6;
     stroke: #00FFFF;
-}
-
-
-.titre-frise {
-    fill: #FF000;
 }
 
 .ligne-separation-frises {
