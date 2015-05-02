@@ -4,5 +4,23 @@
 {"friseId": 0, "nom": "Déclaration des droits de l'homme et du citoyen", "anneeOccurence": 1789, "dateEventuelle": "26 Août", "descriptionCourte": ""},
 {"friseId": 0, "nom": "Chute de la monarchie", "anneeOccurence": 1792, "dateEventuelle": "10 Août", "descriptionCourte": "Prise des Tuileries et suspension de Louis XVI"},
 {"friseId": 0, "nom": "Abolition de la royauté", "anneeOccurence": 1792, "dateEventuelle": "21 Septembre", "descriptionCourte": "La Convention nationale fonde la Première République"},
-{"friseId": 0, "nom": "Les Trois Glorieuses", "anneeOccurence": 1830, "dateEventuelle": "27.28.29 Juillet", "descriptionCourte": "Insurrection à Paris, rassemblant la bourgeoisie et le peuple"}
+{"friseId": 0, "nom": "Les Trois Glorieuses", "anneeOccurence": 1830, "dateEventuelle": "27.28.29 Juillet", "descriptionCourte": "Insurrection à Paris, rassemblant la bourgeoisie et le peuple"},
+{"friseId": 0, "nom": "Le capital, Marx", "anneeOccurence": 1867, "dateEventuelle": "", "descriptionCourte": "Ecrit sur les méfaits du capitalisme et la division du travail"},
+{"friseId": 2, "nom": "Premiers automates, Jacques de Vaucanson :", "anneeOccurence": 1738, "dateEventuelle": "", "descriptionCourte": "Le joueur de flûte et le Canard"},
+{"friseId": 2, "nom": "Machine à vapeur, James Watt:", "anneeOccurence": 1769, "dateEventuelle": "", "descriptionCourte": "Dépot du brevet de la mise au point d'une chambre de condensation pour la vapeur, séparée par une valve"},
+{"friseId": 2, "nom": "Métier à tisser de Jacquard", "anneeOccurence": 1802, "dateEventuelle": "", "descriptionCourte": ""},
+{"friseId": 2, "nom": "Première machine à coudre Singer", "anneeOccurence": 1859, "dateEventuelle": "", "descriptionCourte": ""},
+{"friseId": 3, "nom": "Chaise Thonet n°14", "anneeOccurence": 1859, "dateEventuelle": "", "descriptionCourte": "Bois massif contré à la vapeur, expédition en Kit"},
+
+{"friseId": 4, "nom": "Iron Bridge", "anneeOccurence": 1777, "dateEventuelle": "", "descriptionCourte": "Premier grand Pont métallique (Coalbrookdale, Angleterre)"},
+{"friseId": 4, "nom": "Restauration du Patrimoine médiéval, Viollet-le-Duc", "anneeOccurence": 1830, "dateEventuelle": "", "descriptionCourte": ""},
+{"friseId": 4, "nom": "Crystal Palace, Joseph Paxton", "anneeOccurence": 1851, "dateEventuelle": "", "descriptionCourte": "Architecture de fer et de verre, d'éléments préfabriqués assemblés sur le chantier même"},
+{"friseId": 4, "nom": "Red House, Philip Webb pour Wiliam Morris", "anneeOccurence": 1859, "dateEventuelle": "", "descriptionCourte": "Symbole du mouvement Arts & Crafts"},
+{"friseId": 4, "nom": "Tour Eiffel, Gustave Eiffel", "anneeOccurence": 1889, "dateEventuelle": "", "descriptionCourte": "Manifeste de l'architecture de fer, construite à l'occasion de l'exposition universelle de 1889 à Paris"},
+{"friseId": 4, "nom": "Hotel Tassel, Victor Hortel, Bruxelles", "anneeOccurence": 1893, "dateEventuelle": "", "descriptionCourte": "Décors en coup de fouet, naissance d'un Art total"},
+{"friseId": 4, "nom": "Guaranty Building, Louis Sullivan, New York", "anneeOccurence": 1895, "dateEventuelle": "", "descriptionCourte": " Verticalité vertigineuse et ornementation minutieuse Art Nouveau"},
+
+{"friseId": 5, "nom": "Marinetti, Manifeste Zang tumb tumb", "anneeOccurence": 1912, "dateEventuelle": "", "descriptionCourte": ""},
+{"friseId": 5, "nom": "Rodtchenko, Plakat", "anneeOccurence": 1924, "dateEventuelle": "", "descriptionCourte": ""},
+{"friseId": 5, "nom": "Robert Massin, La Cantatrice Chauve", "anneeOccurence": 1964, "dateEventuelle": "", "descriptionCourte": "La Cantatrice Chauve de Ionesco, travail typographique et mise en page de Robert Massin"}
 ]
